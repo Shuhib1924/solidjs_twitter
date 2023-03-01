@@ -1,5 +1,6 @@
 import {
   Component,
+  createEffect,
   createSignal,
   createUniqueId,
   For,
@@ -41,6 +42,17 @@ const HomeScreen: Component = () => {
   const [content, setContent] = createSignal("");
   const [glides, setGlides] = createSignal<Glide[]>([]);
   // const [displayContent, setDisplayContent] = createSignal(false);
+
+  // onMount(() => {
+  //   console.log("mount");
+  // });
+
+  createEffect(() => {
+    if (glides().length > 3) {
+      alert("3 glied are added");
+    }
+    // console.log(glides().length);
+  });
   const createGlide = () => {
     const glide = {
       id: createUniqueId(),
