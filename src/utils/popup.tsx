@@ -34,11 +34,15 @@ const Popup: Component<Props> = ({ opener: Opener }) => {
     window.removeEventListener("click", closePopup);
   });
 
-  const closePopup = () => {
-    if (isOpen()) {
+  const closePopup = (e: MouseEvent) => {
+    if (isOpen() && !isPopupClicked(e)) {
       setIsOpen(false);
       console.log("close popup");
     }
+  };
+
+  const isPopupClicked = (e: MouseEvent) => {
+    return popup?.contains(e.target as Node);
   };
 
   const adjustPopup = () => {
@@ -46,9 +50,12 @@ const Popup: Component<Props> = ({ opener: Opener }) => {
     // debugger;
     // console.log(followTo);
     // console.log(popup);
-    const position = followTo.getBoundingClientRect();
-    popup.style.left = position.left + "px";
-    popup.style.bottom = followTo.clientHeight + "px";
+    if (!!popup) {
+      //make sure that function just work rightly, when the popup is closed
+      const position = followTo.getBoundingClientRect();
+      popup.style.left = position.left + "px";
+      popup.style.bottom = followTo.clientHeight + "px";
+    }
   };
 
   return (
