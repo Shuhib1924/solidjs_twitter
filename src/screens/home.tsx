@@ -47,12 +47,12 @@ const HomeScreen: Component = () => {
   //   console.log("mount");
   // });
 
-  createEffect(() => {
-    if (glides().length > 3) {
-      alert("3 glied are added");
-    }
-    // console.log(glides().length);
-  });
+  // createEffect(() => {
+  //   if (glides().length > 3) {
+  //     alert("3 glied are added");
+  //   }
+  //   // console.log(glides().length);
+  // });
   const createGlide = () => {
     const glide = {
       id: createUniqueId(),
