@@ -17,10 +17,11 @@ const Popup: Component<Props> = ({ opener: Opener }) => {
   });
 
   const adjustPopup = () => {
-    console.log("adjusting");
-    debugger;
-    console.log(followTo);
-    console.log(popup);
+    // console.log("adjusting");
+    // debugger;
+    // console.log(followTo);
+    // console.log(popup);
+    popup.style.bottom = followTo.clientHeight + "px";
   };
 
   return (
