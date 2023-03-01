@@ -1,4 +1,4 @@
-import { Component, createSignal, createUniqueId, For } from "solid-js";
+import { Component, createSignal, createUniqueId, For, Show } from "solid-js";
 import { FaRegularImage } from "solid-icons/fa";
 import MainLayout from "../components/layouts/MainLayout";
 import GlidePost from "../components/glides/glidepost";
@@ -11,6 +11,7 @@ import { Glide } from "../types/glide";
 const HomeScreen: Component = () => {
   const [content, setContent] = createSignal("");
   const [glides, setGlides] = createSignal<Glide[]>([]);
+  const [displayContent, setDisplayContent] = createSignal(false);
   const createGlide = () => {
     const glide = {
       id: createUniqueId(),
@@ -92,6 +93,12 @@ const HomeScreen: Component = () => {
           // </div>
         )}
       </For>
+      <button onclick={() => setDisplayContent(!displayContent())}>
+        toggle
+      </button>
+      <Show when={displayContent()}>
+        <div>hello</div>
+      </Show>
       {/* HOME PAGE END */}
     </MainLayout>
   );
