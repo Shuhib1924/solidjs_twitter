@@ -6,7 +6,12 @@ import AppRouter from "./router";
 // };
 
 const App: Component = () => {
-  return <AppRouter />;
+  return (
+    <>
+      <div id="popups" />
+      <AppRouter />
+    </>
+  );
 };
 
 export default App;
