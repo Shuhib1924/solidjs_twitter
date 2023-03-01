@@ -62,7 +62,7 @@ const MainSidebar: Component = () => {
                   </div>
                 </div>
                 <div class="flex-it xl:flex hidden flex-grow flex-row justify-between items-center">
-                  <div class="flex-it mx-3 font-bold">Filip99</div>
+                  <div class="flex-it mx-3 font-bold">shuhib</div>
                   <div class="flex-it">
                     <FiMoreHorizontal />
                   </div>
