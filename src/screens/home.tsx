@@ -1,4 +1,12 @@
-import { Component, createSignal, createUniqueId, For, Show } from "solid-js";
+import {
+  Component,
+  createSignal,
+  createUniqueId,
+  For,
+  onCleanup,
+  onMount,
+  Show,
+} from "solid-js";
 import { FaRegularImage } from "solid-icons/fa";
 import MainLayout from "../components/layouts/MainLayout";
 import GlidePost from "../components/glides/glidepost";
@@ -8,10 +16,31 @@ import { Glide } from "../types/glide";
 //   content: String;
 // };
 
+// const HelloWorld = () => {
+//   onMount(() => {
+//     console.log("initialized");
+//   });
+
+//   onCleanup(() => {
+//     console.log("clean up");
+//   });
+//   return <div>hello</div>;
+// };
+
+// const GoodBye = () => {
+//   onMount(() => {
+//     console.log("g init");
+//   });
+//   onCleanup(() => {
+//     console.log("g clean");
+//   });
+//   return <div>goodbye</div>;
+// };
+
 const HomeScreen: Component = () => {
   const [content, setContent] = createSignal("");
   const [glides, setGlides] = createSignal<Glide[]>([]);
-  const [displayContent, setDisplayContent] = createSignal(false);
+  // const [displayContent, setDisplayContent] = createSignal(false);
   const createGlide = () => {
     const glide = {
       id: createUniqueId(),
@@ -93,12 +122,12 @@ const HomeScreen: Component = () => {
           // </div>
         )}
       </For>
-      <button onclick={() => setDisplayContent(!displayContent())}>
+      {/* <button onclick={() => setDisplayContent(!displayContent())}>
         toggle
       </button>
-      <Show when={displayContent()}>
-        <div>hello</div>
-      </Show>
+      <Show when={displayContent()} fallback={<GoodBye />}>
+        <HelloWorld />
+      </Show> */}
       {/* HOME PAGE END */}
     </MainLayout>
   );
