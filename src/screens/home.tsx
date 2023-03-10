@@ -71,6 +71,13 @@ const HomeScreen: Component = () => {
     console.log(JSON.stringify(glides()));
   };
 
+  onMount(() => {
+    console.log("mounting");
+  });
+  onCleanup(() => {
+    console.log("cleaning");
+  });
+
   return (
     <MainLayout>
       {/* HOME PAGE START */}
