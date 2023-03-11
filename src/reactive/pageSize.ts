@@ -17,7 +17,9 @@ const pageSize = () => {
   //   onCleanup(() => {
   //     console.log("onCleanUp pagesize");
   //   });
-  return value;
+  const isXL = () => value().width > 800;
+  const isLG = () => value().width > 500;
+  return { isLG, isXL };
 };
 
 export default createRoot(pageSize);

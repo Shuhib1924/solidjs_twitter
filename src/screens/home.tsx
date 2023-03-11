@@ -13,6 +13,7 @@ import MainLayout from "../components/layouts/MainLayout";
 import GlidePost from "../components/glides/glidepost";
 import { Glide } from "../types/glide";
 import pageSize from "../reactive/pageSize";
+import { RiDesignQuillPenLine } from "solid-icons/ri";
 
 // type Glide = {
 //   content: String;
@@ -80,7 +81,7 @@ const HomeScreen: Component = () => {
   });
 
   const testValue = pageSize;
-  console.log("login is getting " + JSON.stringify(testValue()));
+  console.log("login is getting " + JSON.stringify(testValue));
 
   return (
     <MainLayout>
@@ -126,7 +127,12 @@ const HomeScreen: Component = () => {
                             bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full flex-it transition duration-200"
               >
                 <div class="flex-it flex-row text-sm font-bold text-white items-start justify-center">
-                  <span>Glide It</span>
+                  <Show
+                    when={pageSize.isXL()}
+                    fallback={<RiDesignQuillPenLine />}
+                  >
+                    <div>Glide it</div>
+                  </Show>
                 </div>
               </button>
             </div>
