@@ -1,9 +1,12 @@
 import { A } from "@solidjs/router";
 import { Component } from "solid-js";
 import MainLayout from "../components/layouts/MainLayout";
+import pageSize from "../reactive/pageSize";
 import HomeScreen from "./home";
 
 const LoginScreen: Component = () => {
+  const testValue = pageSize;
+  console.log("login is getting " + JSON.stringify(testValue()));
   return (
     <div class="flex-it justify-center items-center h-full">
       <div class="text-white text-4xl font-bold">Glider - Get In</div>
