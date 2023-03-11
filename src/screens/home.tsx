@@ -12,6 +12,7 @@ import { FaRegularImage } from "solid-icons/fa";
 import MainLayout from "../components/layouts/MainLayout";
 import GlidePost from "../components/glides/glidepost";
 import { Glide } from "../types/glide";
+import pagesize from "../reactive/pageSize";
 
 // type Glide = {
 //   content: String;
@@ -77,6 +78,9 @@ const HomeScreen: Component = () => {
   onCleanup(() => {
     console.log("cleaning");
   });
+
+  const testValue = pagesize;
+  console.log(testValue);
 
   return (
     <MainLayout>

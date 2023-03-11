@@ -37,7 +37,7 @@ const Popup: Component<Props> = ({ opener: Opener }) => {
   const closePopup = (e: MouseEvent) => {
     if (isOpen() && !isPopupClicked(e)) {
       setIsOpen(false);
-      console.log("close popup");
+      // console.log("close popup");
     }
   };
 
@@ -64,7 +64,7 @@ const Popup: Component<Props> = ({ opener: Opener }) => {
         ref={followTo!}
         onClick={(e) => {
           e.stopImmediatePropagation(); //this beware to start closePopup, when i click on ajdustPopup
-          console.log("open popup");
+          // console.log("open popup");
           setIsOpen(!isOpen());
         }}
       >
@@ -79,7 +79,7 @@ const Popup: Component<Props> = ({ opener: Opener }) => {
             <div class="w-72 min-w-68 max-h-120 min-h-8 flex-it overflow-auto">
               <div class="flex-it flex-grow flex-shrink py-3">
                 <div class="flex-it px-4 py-3 transition hover:bg-gray-700">
-                  Logout
+                  Log out
                 </div>
               </div>
             </div>
