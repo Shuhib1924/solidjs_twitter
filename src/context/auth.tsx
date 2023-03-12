@@ -6,6 +6,7 @@ import {
   onMount,
   ParentComponent,
   Setter,
+  Show,
   useContext,
 } from "solid-js";
 import { createStore } from "solid-js/store";
@@ -73,7 +74,9 @@ const AuthProvider: ParentComponent = (props) => {
         store
       }
     >
-      <Loader size={100} />
+      <Show when={store.loading} fallback={props.children}>
+        <Loader size={100} />
+      </Show>
       {/* {props.children} */}
     </AuthStateContext.Provider>
   );

@@ -7,13 +7,13 @@ import AppRouter from "./router";
 // };
 
 const App: Component = () => {
-  const authState = useAuthState()!;
+  // const authState = useAuthState()!;
   return (
     <>
-      <div class="text-white">
+      {/* <div class="text-white">
         <div>authenticated: {`${authState.isAuthenticated}`}</div>
         <div>loading: {`${authState.loading}`}</div>
-      </div>
+      </div> */}
       <div id="popups" />
       <AppRouter />
     </>

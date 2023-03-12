@@ -22,12 +22,12 @@ export const links = [
   },
   {
     name: "Login",
-    href: "/login",
+    href: "/auth/login",
     icon: () => <IoNotificationsCircleOutline size={SIZE} />,
   },
   {
     name: "Register",
-    href: "/register",
+    href: "/auth/register",
     icon: () => <RiMapCompassLine size={SIZE} />,
   },
 ];

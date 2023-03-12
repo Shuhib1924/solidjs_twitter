@@ -9,8 +9,8 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" component={HomeScreen} />
-      <Route path="/login" component={LoginScreen} />
-      <Route path="/register" component={RegisterScreen} />
+      <Route path="/auth/login" component={LoginScreen} />
+      <Route path="/auth/register" component={RegisterScreen} />
     </Routes>
   );
 };
