@@ -84,9 +84,9 @@ const HomeScreen: Component = () => {
   // const testValue = pageSize;
   // console.log("login is getting " + JSON.stringify(testValue));
 
-  const authState = useAuthState()!;
-  console.log("isAuthenticated: " + authState.isAuthenticated);
-  console.log("loading: " + authState.loading);
+  // const authState = useAuthState()!;
+  // console.log("isAuthenticated: " + authState.isAuthenticated);
+  // console.log("loading: " + authState.loading);
   // onMount(() => {
   //   authState.setIsAuthenticated(true);
   //   authState.setLoading(false);

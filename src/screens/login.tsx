@@ -8,9 +8,9 @@ import HomeScreen from "./home";
 const LoginScreen: Component = () => {
   // const testValue = pageSize;
   // console.log("login is getting " + JSON.stringify(testValue));
-  const authState = useAuthState()!;
-  console.log("isAuthenticated: " + authState.isAuthenticated);
-  console.log("loading: " + authState.loading);
+  // const authState = useAuthState()!;
+  // console.log("isAuthenticated: " + authState.isAuthenticated);
+  // console.log("loading: " + authState.loading);
   return (
     <div class="flex-it justify-center items-center h-full">
       <div class="text-white text-4xl font-bold">Glider - Get In</div>

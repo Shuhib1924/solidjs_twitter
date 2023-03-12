@@ -31,14 +31,33 @@ const AuthProvider: ParentComponent = (props) => {
   //   const [isAuthenticated, setIsAuthenticated] = createSignal(false);
   //   const [loading, setLoading] = createSignal(true);
   const initialState = () => ({
-    isAuthenticated: true,
-    loading: false,
+    isAuthenticated: false,
+    loading: true,
   });
   const [store, setStore] = createStore(initialState());
-  onMount(() => {
-    setStore("isAuthenticated", false);
-    setStore("loading", true);
+  //   onMount(() => {
+  //     setStore("isAuthenticated", false);
+  //     setStore("loading", true);
+  //   });
+  const authenticateUser = async () => {
+    return new Promise((res) => {
+      setTimeout(() => {
+        setStore("isAuthenticated", true);
+        res(true);
+      }, 1000);
+    });
+  };
+
+  onMount(async () => {
+    try {
+      await authenticateUser();
+    } catch (error: any) {
+      console.log("error");
+    } finally {
+      setStore("loading", false);
+    }
   });
+
   return (
     <AuthStateContext.Provider
       value={
