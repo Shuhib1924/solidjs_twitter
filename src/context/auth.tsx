@@ -9,6 +9,7 @@ import {
   useContext,
 } from "solid-js";
 import { createStore } from "solid-js/store";
+import Loader from "../utils/loader";
 
 type authStateContextValues = {
   //   testValue: number;
@@ -52,7 +53,7 @@ const AuthProvider: ParentComponent = (props) => {
     try {
       await authenticateUser();
     } catch (error: any) {
-      console.log("error");
+      console.log(error);
     } finally {
       setStore("loading", false);
     }
@@ -72,7 +73,8 @@ const AuthProvider: ParentComponent = (props) => {
         store
       }
     >
-      {props.children}
+      <Loader size={100} />
+      {/* {props.children} */}
     </AuthStateContext.Provider>
   );
 };
