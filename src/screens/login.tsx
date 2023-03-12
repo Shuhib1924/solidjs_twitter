@@ -1,12 +1,16 @@
 import { A } from "@solidjs/router";
 import { Component } from "solid-js";
 import MainLayout from "../components/layouts/MainLayout";
+import { useAuthState } from "../context/auth";
 import pageSize from "../reactive/pageSize";
 import HomeScreen from "./home";
 
 const LoginScreen: Component = () => {
-  const testValue = pageSize;
-  console.log("login is getting " + JSON.stringify(testValue));
+  // const testValue = pageSize;
+  // console.log("login is getting " + JSON.stringify(testValue));
+  const authState = useAuthState()!;
+  console.log("testValue: " + authState.testValue);
+  console.log("testFunction: " + authState.testFunction());
   return (
     <div class="flex-it justify-center items-center h-full">
       <div class="text-white text-4xl font-bold">Glider - Get In</div>

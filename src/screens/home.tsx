@@ -14,6 +14,7 @@ import GlidePost from "../components/glides/glidepost";
 import { Glide } from "../types/glide";
 import pageSize from "../reactive/pageSize";
 import { RiDesignQuillPenLine } from "solid-icons/ri";
+import { useAuthState } from "../context/auth";
 
 // type Glide = {
 //   content: String;
@@ -70,18 +71,22 @@ const HomeScreen: Component = () => {
     };
     setGlides([glide, ...glides()]);
     setContent("");
-    console.log(JSON.stringify(glides()));
+    // console.log(JSON.stringify(glides()));
   };
 
-  onMount(() => {
-    console.log("mounting");
-  });
-  onCleanup(() => {
-    console.log("cleaning");
-  });
+  // onMount(() => {
+  //   console.log("mounting");
+  // });
+  // onCleanup(() => {
+  //   console.log("cleaning");
+  // });
 
-  const testValue = pageSize;
-  console.log("login is getting " + JSON.stringify(testValue));
+  // const testValue = pageSize;
+  // console.log("login is getting " + JSON.stringify(testValue));
+
+  const authState = useAuthState()!;
+  console.log("testValue: " + authState.testValue);
+  console.log("testFunction: " + authState.testFunction());
 
   return (
     <MainLayout>
